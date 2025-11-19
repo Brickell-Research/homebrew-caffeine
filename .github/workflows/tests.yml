@@ -1,0 +1,36 @@
+name: Test Formula
+
+on:
+  push:
+    paths:
+      - 'Formula/*.rb'
+  pull_request:
+    paths:
+      - 'Formula/*.rb'
+  workflow_dispatch:
+
+jobs:
+  test-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Test formula
+        run: |
+          brew audit --strict Formula/caffeine_lang.rb
+          brew install --build-from-source Formula/caffeine_lang.rb
+          brew test caffeine_lang
+
+  test-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Test formula
+        run: |
+          brew audit --strict Formula/caffeine_lang.rb
+          brew install --build-from-source Formula/caffeine_lang.rb
+          brew test caffeine_lang
