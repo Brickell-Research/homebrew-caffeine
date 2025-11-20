@@ -7,13 +7,13 @@ class CaffeineLang < Formula
   # Platform-specific downloads
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v0.1.5/caffeine-0.1.5-macos-x64.tar.gz"
-    sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+    sha256 "b85a32ba2d747a353f0080c9560aebe2f982d080aebfd56ae42f586f22ba4903"
   elsif OS.mac? && Hardware::CPU.arm?
     url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v0.1.5/caffeine-0.1.5-macos-arm64.tar.gz"
-    sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+    sha256 "9ba8bd584e55eb97e8070e9073842107234220277f0984e0950509506c154741"
   elsif OS.linux? && Hardware::CPU.intel?
     url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v0.1.5/caffeine-0.1.5-linux-x64.tar.gz"
-    sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+    sha256 "412c6a57783824a3f236a42f6989865ce935a036d9f068a19a1aac5607e4b87e"
   end
 
   def install
