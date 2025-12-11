@@ -15,10 +15,10 @@ FORMULA_FILE="Formula/caffeine_lang.rb"
 # Update version in formula
 sed -i.bak "s/version \".*\"/version \"$VERSION\"/" "$FORMULA_FILE"
 
-# URLs for each platform (note: tag format is v.X.X.X)
-MACOS_X64_URL="https://github.com/Brickell-Research/caffeine_lang/releases/download/v.${VERSION}/caffeine-${VERSION}-macos-x64.tar.gz"
-MACOS_ARM64_URL="https://github.com/Brickell-Research/caffeine_lang/releases/download/v.${VERSION}/caffeine-${VERSION}-macos-arm64.tar.gz"
-LINUX_X64_URL="https://github.com/Brickell-Research/caffeine_lang/releases/download/v.${VERSION}/caffeine-${VERSION}-linux-x64.tar.gz"
+# URLs for each platform (tag format is vX.X.X)
+MACOS_X64_URL="https://github.com/Brickell-Research/caffeine_lang/releases/download/v${VERSION}/caffeine-${VERSION}-macos-x64.tar.gz"
+MACOS_ARM64_URL="https://github.com/Brickell-Research/caffeine_lang/releases/download/v${VERSION}/caffeine-${VERSION}-macos-arm64.tar.gz"
+LINUX_X64_URL="https://github.com/Brickell-Research/caffeine_lang/releases/download/v${VERSION}/caffeine-${VERSION}-linux-x64.tar.gz"
 
 echo "Downloading and calculating SHA256 checksums..."
 
@@ -39,9 +39,9 @@ echo "  macOS arm64: $SHA_MACOS_ARM64"
 echo "  Linux x64:   $SHA_LINUX_X64"
 
 # Update URLs in formula
-sed -i.bak "s|caffeine_lang/releases/download/v\.[^/]*/caffeine-[^-]*-macos-x64|caffeine_lang/releases/download/v.${VERSION}/caffeine-${VERSION}-macos-x64|g" "$FORMULA_FILE"
-sed -i.bak "s|caffeine_lang/releases/download/v\.[^/]*/caffeine-[^-]*-macos-arm64|caffeine_lang/releases/download/v.${VERSION}/caffeine-${VERSION}-macos-arm64|g" "$FORMULA_FILE"
-sed -i.bak "s|caffeine_lang/releases/download/v\.[^/]*/caffeine-[^-]*-linux-x64|caffeine_lang/releases/download/v.${VERSION}/caffeine-${VERSION}-linux-x64|g" "$FORMULA_FILE"
+sed -i.bak "s|caffeine_lang/releases/download/v[^/]*/caffeine-[^-]*-macos-x64|caffeine_lang/releases/download/v${VERSION}/caffeine-${VERSION}-macos-x64|g" "$FORMULA_FILE"
+sed -i.bak "s|caffeine_lang/releases/download/v[^/]*/caffeine-[^-]*-macos-arm64|caffeine_lang/releases/download/v${VERSION}/caffeine-${VERSION}-macos-arm64|g" "$FORMULA_FILE"
+sed -i.bak "s|caffeine_lang/releases/download/v[^/]*/caffeine-[^-]*-linux-x64|caffeine_lang/releases/download/v${VERSION}/caffeine-${VERSION}-linux-x64|g" "$FORMULA_FILE"
 
 echo ""
 echo "Please manually update the SHA256 hashes in $FORMULA_FILE:"
