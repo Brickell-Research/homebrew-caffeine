@@ -1,19 +1,19 @@
 class CaffeineLang < Formula
   desc "Caffeine programming language"
   homepage "https://caffeine-lang.run"
-  version "0.2.10"
+  version "0.2.11"
   license "GPL-3.0-only"
 
   # Platform-specific downloads
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v0.2.10/caffeine-0.2.10-macos-x64.tar.gz"
-    sha256 "6841a1dee3232cfc7e637ca2df511db6c326301a392381a50e747cf763ec46e4"
+    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v0.2.11/caffeine-0.2.11-macos-x64.tar.gz"
+    sha256 "5b031888f392672fd016922794491e52e6edf191ae5b4df0585db43a699b6a5a"
   elsif OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v0.2.10/caffeine-0.2.10-macos-arm64.tar.gz"
-    sha256 "b4e067fc5ea53b3ca02666b276d860c68d50d544c6ee842dd0b9a4de6e6d7ac6"
+    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v0.2.11/caffeine-0.2.11-macos-arm64.tar.gz"
+    sha256 "9784f64b728780debe7dd23c790cdae43779b33e97746c379f8ddea651b3006a"
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v0.2.10/caffeine-0.2.10-linux-x64.tar.gz"
-    sha256 "b4c87a9df8daa6102610360b73a6e7ff5753d559e873f804ac65fdd4e60be5c9"
+    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v0.2.11/caffeine-0.2.11-linux-x64.tar.gz"
+    sha256 "6007bee470172b56dbc0428e338ee6fde602a1d588520d9b8eff0acea4ddd646"
   end
 
   def install
