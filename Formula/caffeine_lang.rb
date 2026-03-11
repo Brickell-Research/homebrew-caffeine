@@ -2,28 +2,32 @@ class CaffeineLang < Formula
   desc "Caffeine programming language"
   homepage "https://caffeine-lang.run"
   license "GPL-3.0-only"
-  version "4.7.9"
+  version "4.8.0"
 
-  # Platform-specific downloads (each tarball contains ERTS + compiled BEAM files)
+  # Platform-specific downloads
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v4.7.9/caffeine-4.7.9-macos-x64.tar.gz"
-    sha256 "ed1b15806f042b3a9d50f6b0b9ba10d64e6e74150a95f857174425de5b96da5f"
+    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v4.8.0/caffeine-4.8.0-macos-x64.tar.gz"
+    sha256 "d8c9370251eefdfbed0da927d591ed88600252d3395b7d50ed29df3b99a32fcd"
   elsif OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v4.7.9/caffeine-4.7.9-macos-arm64.tar.gz"
-    sha256 "837f3dea2c719094cbb5830be09605f43530502f18a061f07541cbddc592a0ad"
+    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v4.8.0/caffeine-4.8.0-macos-arm64.tar.gz"
+    sha256 "9c2d636979a9d10f60b3fd6b4daa946b48fbd7863353a99e200527cd05174774"
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v4.7.9/caffeine-4.7.9-linux-x64.tar.gz"
-    sha256 "14e4eca8e84ca840bd55de4caccc67ab1d4e62f8229355c5cc59ae8f93425cb1"
+    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v4.8.0/caffeine-4.8.0-linux-x64.tar.gz"
+    sha256 "015d02597e4738bdd416c48f13ea494a5eed61b84198d75a047033c757eedd44"
   end
 
   def install
-    # Install the full ERTS bundle (VM + libs + wrapper) to libexec
-    libexec.install Dir["*"]
-    # Symlink the wrapper script into bin so it's on PATH
-    bin.install_symlink libexec/"caffeine"
+    # The binary name includes version and platform, rename to just "caffeine"
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "caffeine-#{version}-macos-x64" => "caffeine"
+    elsif OS.mac? && Hardware::CPU.arm?
+      bin.install "caffeine-#{version}-macos-arm64" => "caffeine"
+    elsif OS.linux? && Hardware::CPU.intel?
+      bin.install "caffeine-#{version}-linux-x64" => "caffeine"
+    end
   end
 
   test do
-    system "#{bin}/caffeine", "--version"
+    system "#{bin}/caffeine"
   end
 end
