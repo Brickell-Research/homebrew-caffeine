@@ -2,32 +2,28 @@ class CaffeineLang < Formula
   desc "Caffeine programming language"
   homepage "https://caffeine-lang.run"
   license "GPL-3.0-only"
-  version "4.6.7"
+  version "4.7.5"
 
-  # Platform-specific downloads
+  # Platform-specific downloads (each tarball contains ERTS + compiled BEAM files)
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v4.6.7/caffeine-4.6.7-macos-x64.tar.gz"
-    sha256 "afd0115379567beb5009cc4f8d941ce095087bf82693aacdeb75bdd008cd502d"
+    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v4.7.5/caffeine-4.7.5-macos-x64.tar.gz"
+    sha256 "82ca34aa6c6ce29f4ed21b33c0d14eaf5e3d56b10ec8dd76786093e8f5d80a50"
   elsif OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v4.6.7/caffeine-4.6.7-macos-arm64.tar.gz"
-    sha256 "e5181c314f3098135eb0804d2357ff7e5aed5bcd774c72963262769ed668de4b"
+    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v4.7.5/caffeine-4.7.5-macos-arm64.tar.gz"
+    sha256 "a5d62eb14fd97fbd63414956e6e8a0530110ef29f395103772942d7f7f2dea22"
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v4.6.7/caffeine-4.6.7-linux-x64.tar.gz"
-    sha256 "de27f60996a0877a559c3f0fa1255f5c0aec5e13037ad6e3d3ab5ad9874a971f"
+    url "https://github.com/Brickell-Research/caffeine_lang/releases/download/v4.7.5/caffeine-4.7.5-linux-x64.tar.gz"
+    sha256 "2b1f9eb4a57988cf6a47e93745e4dbf71f4bdc5f4e2de95b4a41176160dfd62f"
   end
 
   def install
-    # The binary name includes version and platform, rename to just "caffeine"
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "caffeine-#{version}-macos-x64" => "caffeine"
-    elsif OS.mac? && Hardware::CPU.arm?
-      bin.install "caffeine-#{version}-macos-arm64" => "caffeine"
-    elsif OS.linux? && Hardware::CPU.intel?
-      bin.install "caffeine-#{version}-linux-x64" => "caffeine"
-    end
+    # Install the full ERTS bundle (VM + libs + wrapper) to libexec
+    libexec.install Dir["*"]
+    # Symlink the wrapper script into bin so it's on PATH
+    bin.install_symlink libexec/"caffeine"
   end
 
   test do
-    system "#{bin}/caffeine"
+    system "#{bin}/caffeine", "--version"
   end
 end
