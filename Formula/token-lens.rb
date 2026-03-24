@@ -2,17 +2,17 @@ class TokenLens < Formula
   desc "Flame graphs for Claude Code token usage"
   homepage "https://github.com/Brickell-Research/token-lens"
   license "MIT"
-  version "0.9.2"
+  version "0.10.0"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/Brickell-Research/token-lens/releases/download/v0.9.2/token-lens-0.9.2-macos-arm64.tar.gz"
-    sha256 "f3df2e5003f92ef1be343d1ef2aa88900b7679539b6308235c208873f8e6a9c9"
+    url "https://github.com/Brickell-Research/token-lens/releases/download/v0.10.0/token-lens-0.10.0-macos-arm64.tar.gz"
+    sha256 "f2dccfaaf5aeeca1a376de3f8bc06a494c6e41581ad5a65a68ccfffc2efcba3b"
   elsif OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/Brickell-Research/token-lens/releases/download/v0.9.2/token-lens-0.9.2-macos-x64.tar.gz"
-    sha256 "2be8d49224388fd07f2c99a098737dfd28fd30f2aa98828d97de23581a846961"
+    url "https://github.com/Brickell-Research/token-lens/releases/download/v0.10.0/token-lens-0.10.0-macos-x64.tar.gz"
+    sha256 "91ce75eb2b5399b6eecbd9694f262420a1dff527dfc1176692a0575dfafc811c"
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/Brickell-Research/token-lens/releases/download/v0.9.2/token-lens-0.9.2-linux-x64.tar.gz"
-    sha256 "c44469039495dd1a3faea3bb88cbe0bc1834dcc25d48aa3992675f017b54236c"
+    url "https://github.com/Brickell-Research/token-lens/releases/download/v0.10.0/token-lens-0.10.0-linux-x64.tar.gz"
+    sha256 "7a60943a1503c0bf0fc32bc091ca071f02e271a8a80a0d46ffee9db0e58696d2"
   end
 
   def install
