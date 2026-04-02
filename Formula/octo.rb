@@ -4,9 +4,9 @@ class Octo < Formula
   license "MIT"
 
   # stable-start managed by octo release workflow
-  url "https://github.com/Brickell-Research/octo/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "59cc5f10b1bee2e72b1a46fbd505c50779db18d0f3e3bc79735101927ac652ff"
-  version "0.10.0"
+  url "https://github.com/Brickell-Research/octo/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "0397a16fef100571b9ce8d7417853591d54f72a4912bbd537ae91e7e7f70b6c7"
+  version "0.11.0"
   # stable-end
 
   depends_on "ruby"
