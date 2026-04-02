@@ -3,11 +3,11 @@ class Octo < Formula
   homepage "https://github.com/Brickell-Research/octo"
   license "MIT"
 
-  # stable-start managed by octo release workflow
-  url "https://github.com/Brickell-Research/octo/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "5ed0a53506bf07b7ce493ba3cd00814c57ad63d8ff395879d095f4003b2e73bd"
-  version "0.3.0"
-  # stable-end
+# stable-start managed by octo release workflow
+url "https://github.com/Brickell-Research/octo/archive/refs/tags/v0.4.0.tar.gz"
+sha256 "f9aa263fbb4cf982cefd9490ef2d305eb08bc08232bc38cfa465047d3b72e1a5"
+version "0.4.0"
+# stable-end
 
   depends_on "ruby"
 
