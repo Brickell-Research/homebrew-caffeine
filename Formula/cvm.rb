@@ -2,17 +2,17 @@ class Cvm < Formula
   desc "Caffeine Version Manager"
   homepage "https://github.com/Brickell-Research/caffeine_vm"
   license "MIT"
-  version "1.0.4"
+  version "1.0.5"
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/Brickell-Research/caffeine_vm/releases/download/v1.0.4/cvm-1.0.4-macos-x64.tar.gz"
-    sha256 "d056542fece3367de866bc8e124c90b3dbfc9b4e36eb0d7be1adb7fb8bed3e4d"
+    url "https://github.com/Brickell-Research/caffeine_vm/releases/download/v1.0.5/cvm-1.0.5-macos-x64.tar.gz"
+    sha256 "b818493398ac292ca342ec671c7907b92e11eada2cb35e456bab5417a3412190"
   elsif OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/Brickell-Research/caffeine_vm/releases/download/v1.0.4/cvm-1.0.4-macos-arm64.tar.gz"
-    sha256 "3af6846d485e3c92a834fca9753536e81983c9fe51a9b8b3a35914ecd5937977"
+    url "https://github.com/Brickell-Research/caffeine_vm/releases/download/v1.0.5/cvm-1.0.5-macos-arm64.tar.gz"
+    sha256 "221a00ea409fb306f84940900c1a3b078cfcdeb7437fe77e41ca74b0cdcaae70"
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/Brickell-Research/caffeine_vm/releases/download/v1.0.4/cvm-1.0.4-linux-x64.tar.gz"
-    sha256 "06ead206ba222a465debf3b7c4003a5eeb2b2230d41b56ccee4cbaa39c3148cb"
+    url "https://github.com/Brickell-Research/caffeine_vm/releases/download/v1.0.5/cvm-1.0.5-linux-x64.tar.gz"
+    sha256 "39b92c9af1ef1eb51f2ce355187b1cd388610c51d7228c60ee84abdf25a24418"
   end
 
   def install
