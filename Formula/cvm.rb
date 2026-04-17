@@ -6,13 +6,13 @@ class Cvm < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/Brickell-Research/caffeine_vm/releases/download/v1.0.5/cvm-1.0.5-macos-x64.tar.gz"
-    sha256 "b818493398ac292ca342ec671c7907b92e11eada2cb35e456bab5417a3412190"
+    sha256 "d9b373b439c6d431b75f0fa481d3cee9959d56274fdafd8dbc55534c815b5fa1"
   elsif OS.mac? && Hardware::CPU.arm?
     url "https://github.com/Brickell-Research/caffeine_vm/releases/download/v1.0.5/cvm-1.0.5-macos-arm64.tar.gz"
-    sha256 "221a00ea409fb306f84940900c1a3b078cfcdeb7437fe77e41ca74b0cdcaae70"
+    sha256 "74f980b18bfdd7be0b2c93730ca7084bf07050a3d550681c900723d91de023ae"
   elsif OS.linux? && Hardware::CPU.intel?
     url "https://github.com/Brickell-Research/caffeine_vm/releases/download/v1.0.5/cvm-1.0.5-linux-x64.tar.gz"
-    sha256 "39b92c9af1ef1eb51f2ce355187b1cd388610c51d7228c60ee84abdf25a24418"
+    sha256 "00f33f435298a257aa86bbb11659d7dd30e6d0e073645d1b9c22cb6a57a3e58c"
   end
 
   def install
