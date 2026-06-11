@@ -1,9 +1,9 @@
 class Manatee < Formula
   desc "Self adapting agent harness"
   homepage "https://github.com/Brickell-Research/manatee"
-  version "0.1.0"
-  url "https://github.com/Brickell-Research/manatee/releases/download/v0.1.0/manatee-0.1.0.tar.gz"
-  sha256 "6b3b4bd1eed498faf6b0438e76921563811a9f301d95a00037b20e0990be8ebb"
+  version "0.1.1"
+  url "https://github.com/Brickell-Research/manatee/releases/download/v0.1.1/manatee-0.1.1.tar.gz"
+  sha256 "1291cd8d998f85188d21c2c02a31d0cc6162a1186cdb3b6a44850be0fc91fde4"
 
   depends_on "erlang"
 
